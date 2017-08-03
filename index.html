@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Blockchain</title>
+		<link rel="manifest" href="manifest.json">
+		<link rel="stylesheet" href="css/index.css"></link>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="icon" href="img/icon32x32.png" type="image/png" />
+	</head>
+	<body>
+		<app-root>
+			<tab-panel selected-index="2">
+				<div slot="tab">Hash</div>
+				<div slot="tab">Block</div>
+				<div slot="tab">Chain</div>
+				<div slot="tab">Distributed</div>
+				<section slot="content">
+					<h1>Hashing (SHA-256)</h1>
+					<data-hasher></data-hasher>
+				</section>
+				<section slot="content">
+					<h1>Building Block</h1>
+					<block-builder></block-builder>
+				</section>
+				<section slot="content">
+					<h1>Chaining</h1>
+					<chain-builder>
+						<block-builder data="Hello World"></block-builder>
+					</chain-builder>
+				</section>
+				<section slot="content">
+					<h1>Network</h1>
+					<network-builder>
+						<chain-builder></chain-builder>
+						<chain-builder></chain-builder>
+						<chain-builder></chain-builder>
+					</network-builder>
+				</section>
+			</tab-panel>
+		</app-root>
+		<!--<service-worker url="service-worker.js" scope="./"></service-worker>-->
+		<script src="js/lib/utilities.js"></script>
+		<script src="js/lib/block-chain-tools.js"></script>
+		<script src="js/components/service-worker.js"></script>
+		<script src="js/components/tab-panel.js"></script>
+		<script src="js/components/app-root.js"></script>
+		<script src="js/components/data-hasher.js"></script>
+		<script src="js/components/block-builder.js"></script>
+		<script src="js/components/chain-builder.js"></script>
+		<script src="js/components/network-builder.js"></script>
+	</body>
+</html>
